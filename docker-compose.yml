@@ -19,7 +19,7 @@ services:
       - service-access-control      
       - service-ui      
   service-ui:
-    image: jianaoshuanhan/service-ui:0.0.1-SNAPSHOT
+    image: jianaoshuanhan/service-ui
     ports:
       - "8041:8041" 
     links:
