@@ -1,0 +1,27 @@
+version: '2'
+services:
+  discovery:
+    image: jianaoshuanhan/service-discovery-center:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761" 
+  service-access-control:
+    image: jianaoshuanhan/service-access-control:0.0.1-SNAPSHOT
+    ports:
+      - "8040:8040"
+    links:
+      - discovery        
+  service-fronted-inside:
+    image: jianaoshuanhan/service-fronted-inside:0.0.1-SNAPSHOT
+    ports:
+      - "80:80"  
+    links:
+      - discovery
+      - service-access-control      
+      - service-ui      
+  service-ui:
+    image: jianaoshuanhan/service-ui:0.0.1-SNAPSHOT
+    ports:
+      - "8041:8041" 
+    links:
+      - discovery
+      - service-access-control            
