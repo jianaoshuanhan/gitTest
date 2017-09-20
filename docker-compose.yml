@@ -24,4 +24,64 @@ services:
       - "8041:8041" 
     links:
       - discovery
-      - service-access-control            
+      - service-access-control
+  service-acs:
+    image: jianaoshuanhan/service-acs:0.0.1-SNAPSHOT
+    ports:
+      - "8044:8044" 
+    links:
+      - discovery
+  service-ccs:
+    image: jianaoshuanhan/service-ccs:0.0.1-SNAPSHOT
+    ports:
+      - "8043:8043" 
+    links:
+      - discovery
+  service-pcs:
+    image: jianaoshuanhan/service-pcs:0.0.1-SNAPSHOT
+    ports:
+      - "8046:8046" 
+    links:
+      - discovery
+  service-config-center:
+    image: jianaoshuanhan/service-config-center:0.0.1-SNAPSHOT
+    ports:
+      - "8047:8047" 
+    links:
+      - discovery
+  service-ermas:
+    image: jianaoshuanhan/service-ermas:0.0.1-SNAPSHOT
+    ports:
+      - "8045:8045" 
+    links:
+      - discovery
+  service-fronted-outside:
+    image: jianaoshuanhan/service-fronted-outside:0.0.1-SNAPSHOT
+    ports:
+      - "8888:8888" 
+    links:
+      - discovery
+  service-monitor-center:
+    image: jianaoshuanhan/service-monitor-center:0.0.1-SNAPSHOT
+    ports:
+      - "8048:8048" 
+    links:
+      - discovery
+  service-rmps:
+    image: jianaoshuanhan/service-rmps:0.0.1-SNAPSHOT
+    ports:
+      - "8042:8042" 
+    links:
+      - discovery
+  service-turbine-server:
+    image: jianaoshuanhan/service-turbine-server:0.0.1-SNAPSHOT
+    ports:
+      - "8050:8050" 
+    links:
+      - discovery
+  service-zipkin-server:
+    image: jianaoshuanhan/service-zipkin-server:0.0.1-SNAPSHOT
+    ports:
+      - "8049:8049" 
+    links:
+      - discovery
